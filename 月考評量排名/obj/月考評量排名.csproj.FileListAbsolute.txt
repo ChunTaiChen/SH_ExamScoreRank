@@ -1,0 +1,24 @@
+C:\Documents and Settings\ChenCT\桌面\SmartSchool 0.2.14 build 1(20080227)\Customize\月考評量排名.dll
+C:\Documents and Settings\ChenCT\桌面\SmartSchool 0.2.14 build 1(20080227)\Customize\月考評量排名.pdb
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\ResolveAssemblyReference.cache
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\月考評量排名.frm1.resources
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\月考評量排名.Properties.Resources.resources
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\月考評量排名.csproj.GenerateResource.Cache
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\月考評量排名.dll
+C:\ProjTest\月考評量排名\月考評量排名\obj\Debug\月考評量排名.pdb
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\ResolveAssemblyReference.cache
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\月考評量排名.frm1.resources
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\月考評量排名.Properties.Resources.resources
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\月考評量排名.csproj.GenerateResource.Cache
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\月考評量排名.dll
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\月考評量排名\obj\Debug\月考評量排名.pdb
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\ResolveAssemblyReference.cache
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\月考評量排名.frm1.resources
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\月考評量排名.Properties.Resources.resources
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\月考評量排名.csproj.GenerateResource.Cache
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\月考評量排名.dll
+D:\ISchoolPlugIn\月考評量排名\月考評量排名\obj\Debug\月考評量排名.pdb
+D:\Documents and Settings\ChenCT\桌面\SmartSchool 0.2.14 build 1(20080227)\Customize\月考評量排名.dll
+D:\Documents and Settings\ChenCT\桌面\SmartSchool 0.2.14 build 1(20080227)\Customize\月考評量排名.pdb
+D:\SmartSchool 0.3.18 build 1(20080814)\Customize\月考評量排名.dll
+D:\SmartSchool 0.3.18 build 1(20080814)\Customize\月考評量排名.pdb
