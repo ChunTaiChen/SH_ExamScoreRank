@@ -31,6 +31,7 @@ namespace 月考評量排名
         List<StudentData> StudDatas = new List<StudentData>();
         List<StudentRecord> StudRecs = new List<StudentRecord>();
         List<ClassRecord> ClassRecs = new List<ClassRecord>();
+        List<StudentRecord> StudMissingExam = new List<StudentRecord>();    // 小郭. 2013/12/17
         string ExName = "";
         //string ExName1 = "";
         //string tmpClass = "";
@@ -234,10 +235,18 @@ namespace 月考評量排名
             if (cboExam.Text != "" && chkBtn1 != false && chkBtn2 != false)
             {
                 StudDatas.Clear();
+                StudMissingExam.Clear();    // 小郭. 2013/12/17
                 //foreach (ClassRecord cr in ClassRecs )
                 //{
                 foreach (StudentRecord StudRec in StudRecs)
                 {
+                    // 檢查是否有缺考, 小郭. 2013/12/17
+                    if (IsMissingExam(StudRec) == true)
+                    {
+                        StudMissingExam.Add(StudRec);
+                        continue;
+                    }
+
                     StudentData sd = new StudentData();
                     sd.StudentID = StudRec.StudentID;
                     sd.StudentNum = StudRec.StudentNumber;
@@ -1951,6 +1960,36 @@ namespace 月考評量排名
                 }
             } //if
 
+            // 印出缺考學生名單, 小郭, 2013/12/17
+            if (StudMissingExam.Count > 0)
+            {
+                int sheetIndex;
+                int rowIndex, columnIndex;
+                string sheetName_MissingExam = "缺考名單";
+                wb.Worksheets.Add();
+                sheetIndex = wb.Worksheets.Count - 1;
+                wb.Worksheets[sheetIndex].Name = sheetName_MissingExam;
+                Aspose.Cells.Cells cells = wb.Worksheets[sheetIndex].Cells;
+
+                // 輸出標題
+                rowIndex = 0;
+                columnIndex = 0;
+                cells[rowIndex, columnIndex++].PutValue("學號");
+                cells[rowIndex, columnIndex++].PutValue("班級");
+                cells[rowIndex, columnIndex++].PutValue("座號");
+                cells[rowIndex, columnIndex++].PutValue("姓名");
+
+                // 輸出缺考的學生名單
+                foreach (StudentRecord rec in StudMissingExam)
+                {
+                    rowIndex++;
+                    columnIndex = 0;
+                    cells[rowIndex, columnIndex++].PutValue(rec.StudentNumber);
+                    cells[rowIndex, columnIndex++].PutValue(rec.RefClass.ClassName);
+                    cells[rowIndex, columnIndex++].PutValue(rec.SeatNo);
+                    cells[rowIndex, columnIndex++].PutValue(rec.StudentName);
+                }
+            }
 
             try
             {
@@ -2359,6 +2398,44 @@ namespace 月考評量排名
             }
         }
 
+        /// <summary>
+        /// 檢查學生是否有缺考, 小郭, 2013/12/17
+        /// </summary>
+        /// <returns></returns>
+        private bool IsMissingExam(StudentRecord student)
+        {
+            string missingWord = "缺";
+            List<string> checkSubjectList = new List<string>();
+            // 產生要檢查有沒有缺考的科目
+            if (cboSortType.Text == "科目排名")
+            {
+                // 只檢查單一個科目
+                checkSubjectList.Add(lbxSubjct.Text);
+            }
+            else
+            {
+                // 檢查多的科目
+                foreach (ListViewItem selSubject in lstSubject.CheckedItems)
+                {
+                    checkSubjectList.Add(selSubject.Text);
+                }
+            }
 
+            // 判斷有沒有缺考的科目
+            foreach (ExamScoreInfo exam in student.ExamScoreList)
+            {
+                foreach (string subjectName in checkSubjectList)
+                {
+                    if ((cboExam.Text == exam.ExamName || cboExamlst.Text == exam.ExamName) && // 找到指定的試別
+                        ((exam.Subject + exam.SubjectLevel) == subjectName) &&   // 找到要檢查的科目
+                        (exam.SpecialCase == missingWord))  // 判斷是否為缺考
+                    {
+                        // 有缺考科目
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
