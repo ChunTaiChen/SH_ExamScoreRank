@@ -511,6 +511,9 @@
             this.cbClass.BackgroundStyle.Class = "";
             this.cbClass.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.cbClass.CheckBoxStyle = DevComponents.DotNetBar.eCheckBoxStyle.RadioButton;
+            this.cbClass.Checked = true;
+            this.cbClass.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbClass.CheckValue = "Y";
             this.cbClass.Location = new System.Drawing.Point(4, 2);
             this.cbClass.Name = "cbClass";
             this.cbClass.Size = new System.Drawing.Size(67, 27);

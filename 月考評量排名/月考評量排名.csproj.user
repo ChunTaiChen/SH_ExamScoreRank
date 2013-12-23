@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartAction>Program</StartAction>
-    <StartProgram>C:\Documents and Settings\Dylan.Huang\桌面\ischool desktop\ischooldiag.exe</StartProgram>
+    <StartAction>Project</StartAction>
+    <StartProgram>
+    </StartProgram>
     <StartWorkingDirectory>
     </StartWorkingDirectory>
   </PropertyGroup>
